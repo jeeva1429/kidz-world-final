@@ -93,7 +93,7 @@ var items = [
 function updateCart() {
   let cart = 0;
   for (index = 0; index < items.length; index++) {
-    cart = cart + items[index].quantity;
+    cart += items[index].quantity;
   }
   cartValue.innerHTML = cart;
 }
@@ -155,3 +155,19 @@ cartButton.onclick = () => {
     "The total amount is " + finalDollars + "$ and " + finalCents + " cents"
   );
 };
+
+
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+    navbar.style.backgroundColor = "#6095ff";
+  }
+   else {
+    navbar.classList.remove("sticky");
+  }
+}
